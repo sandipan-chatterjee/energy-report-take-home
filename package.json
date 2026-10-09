@@ -1,0 +1,38 @@
+{
+  "name": "energy-report",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Daily per-meter energy report from Modbus telemetry (JSONL in, JSON on stdout)",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "prestart": "npm run build 1>&2",
+    "start": "node dist/cli/index.js",
+    "dev": "npm run build 1>&2 && node dist/cli/index.js",
+    "pretest": "npm run build",
+    "test": "jest --coverage",
+    "test:unit": "jest tests/unit",
+    "pretest:integration": "npm run build",
+    "test:integration": "jest tests/integration"
+  },
+  "dependencies": {
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/jest": "30.0.0",
+    "@types/node": "20.19.43",
+    "eslint": "10.12.0",
+    "jest": "30.5.2",
+    "prettier": "3.9.9",
+    "ts-jest": "29.4.14",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.71.1"
+  }
+}

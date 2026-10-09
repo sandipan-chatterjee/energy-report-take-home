@@ -1,0 +1,8 @@
+input/
+output/
+.claude/docs/
+dist/
+coverage/
+logs/
+.claude/prompts/
+NOTES.md
